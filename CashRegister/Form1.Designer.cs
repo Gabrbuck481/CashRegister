@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.titleLabel = new System.Windows.Forms.Label();
             this.titleLabel2 = new System.Windows.Forms.Label();
             this.sliceLabel = new System.Windows.Forms.Label();
@@ -242,9 +243,9 @@
             this.receiptLabel.BackColor = System.Drawing.Color.White;
             this.receiptLabel.Font = new System.Drawing.Font("MS Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.receiptLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.receiptLabel.Location = new System.Drawing.Point(358, 192);
+            this.receiptLabel.Location = new System.Drawing.Point(358, 170);
             this.receiptLabel.Name = "receiptLabel";
-            this.receiptLabel.Size = new System.Drawing.Size(205, 236);
+            this.receiptLabel.Size = new System.Drawing.Size(205, 271);
             this.receiptLabel.TabIndex = 26;
             // 
             // confirmOrderButton
@@ -286,8 +287,10 @@
             this.Controls.Add(this.titleLabel2);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.flagImageBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Fredrick Fazbearington\'s";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.flagImageBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -83,5 +83,11 @@
   <ItemGroup>
     <None Include="Resources\flag.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash Register sound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print Sound.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

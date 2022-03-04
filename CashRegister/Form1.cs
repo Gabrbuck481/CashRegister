@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace CashRegister
 {
@@ -59,14 +60,36 @@ namespace CashRegister
             subTotalOutputLabel.Text = subTotal.ToString("C");
             taxOutput.Text = taxAmount.ToString("C");
             totalOutputLabel.Text = total.ToString("C");
+
+            SoundPlayer player = new SoundPlayer(Properties.Resources.Cash_Register_sound);
+
+            player.Play();
+
         }
+
+
+
 
         private void confirmOrderButton_Click(object sender, EventArgs e)
         {
+
+            SoundPlayer player = new SoundPlayer(Properties.Resources.Print_Sound);
+
+            player.Play();
+
+            
+
             receiptLabel.Text = $"    FREDRICK FAZBEARINGTON'S    \n\n\n";
             receiptLabel.Refresh();
             Thread.Sleep(1000);
 
+
+            receiptLabel.Text += $"    October 21, 1987, 3:42 p.m.    \n\n";
+            receiptLabel.Refresh();
+            Thread.Sleep(1000);
+
+            player.Play();
+           
             receiptLabel.Text += $"Slices  {numOfSlices}  @{slicePrice.ToString("C")} \n\n";
             receiptLabel.Refresh();
             Thread.Sleep(1000);
@@ -74,7 +97,9 @@ namespace CashRegister
             receiptLabel.Text += $"Drink  {numOfDrink}  @{drinkPrice.ToString("C")} \n\n";
             receiptLabel.Refresh();
             Thread.Sleep(1000);
-
+            
+            player.Play();
+           
             receiptLabel.Text += $"Garlic Bread  {numOfGarlic}  @{garlicPrice.ToString("C")} \n\n";
             receiptLabel.Refresh();
             Thread.Sleep(1000);
@@ -82,7 +107,9 @@ namespace CashRegister
             receiptLabel.Text += $"Chicken Wings  {numOfWings}  @{wingsPrice.ToString("C")} \n\n";
             receiptLabel.Refresh();
             Thread.Sleep(1000);
-
+            
+            player.Play();
+            
             receiptLabel.Text += $"Family Combo {numOfFamily}  @{familyPrice.ToString("C")} \n\n";
             receiptLabel.Refresh();
             Thread.Sleep(1000);
@@ -90,6 +117,8 @@ namespace CashRegister
             receiptLabel.Text += $"Subtotal {subTotal}  @{subTotal.ToString("C")} \n\n";
             receiptLabel.Refresh();
             Thread.Sleep(1000);
+            
+            player.Play();
            
             receiptLabel.Text += $"Tax {taxRate}  @{taxAmount.ToString("C")} \n\n";
             receiptLabel.Refresh();
@@ -98,11 +127,18 @@ namespace CashRegister
             receiptLabel.Text += $"Total {total}  @{total.ToString("C")} \n\n";
             receiptLabel.Refresh();
             Thread.Sleep(1000);
-            
+           
+            player.Play();
+           
             receiptLabel.Text += $"HAVE A NICE DAY!";
 
 
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
